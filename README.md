@@ -54,7 +54,7 @@ Getting an appointment for vaccination is a huge challenging in my area. I have 
 Please book the appointment for one who doesn't have the access to internet. They need it the most.
 
 ## Troubleshooting
-The www.cowin.gov.in's server will block your request after some time if you continue to send request using the same IP address. To tackle it, some free proxies from ```proxies.py``` are randomaly being rotated in a random time interval. Feel free to add some more to keep the script running.
+The [www.cowin.gov.in](www.cowin.gov.in)'s server will block your request after some time if you continue to send request using the same IP address. To tackle it, some free proxies from ```proxies.py``` are randomaly being rotated in a random time interval. Feel free to add some more to keep the script running.
 
 ## Team
 [![Rohit Swami](https://avatars1.githubusercontent.com/u/16516296?v=3&s=144)](https://rohitswami.com/) |
