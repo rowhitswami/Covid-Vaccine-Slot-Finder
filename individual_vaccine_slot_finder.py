@@ -1,11 +1,27 @@
-import requests
-import json
-from datetime import datetime
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+"""
+    Author - Rohit Swami
+    License - Apache
+    Version - 1.0
+    Email - rowhitswami1@gmail.com
+    Website - www.rohitswami.com
+
+    Additional note - I apologize for not adding any comments in the script.
+        I couldn't due to my bandwidth. It is just a simple script to get the things done and it does it very well.
+        Having said that, it is recommended not to use it in the production at any cost.
+"""
+
 import time
-from playsound import playsound
-import argparse
+import json
 import secrets
+import argparse
+import requests
+from datetime import datetime
+from playsound import playsound
 from proxies import too_many_indian_proxies
+
 
 def get_slots(pincode, min_age, date, valid_ip):
     print(valid_ip)
@@ -21,10 +37,9 @@ def get_slots(pincode, min_age, date, valid_ip):
     session = requests.Session()
     session.headers.update(headers)
     try:
-        r = requests.get(url, headers=session.headers, proxies={'https': valid_ip})
+        r = requests.get(url, headers=session.headers,
+                         proxies={'https': valid_ip})
         data = json.loads(r.content.decode('utf8'))
-        print(data)
-
         for center in range(len(data['centers'])):
             for session in data['centers'][center]['sessions']:
                 if session['min_age_limit'] == min_age and session['available_capacity'] > 0:
